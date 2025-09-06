@@ -1,0 +1,47 @@
+{
+  "name": "achal-tripathi-portfolio",
+  "version": "1.0.0",
+  "description": "Modern portfolio website for Achal Tripathi - Computer Science Student & Full-Stack Developer",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "build": "echo 'No build process needed for static site'",
+    "deploy": "echo 'Ready for deployment to any static hosting service'"
+  },
+  "keywords": [
+    "portfolio",
+    "website",
+    "frontend",
+    "developer",
+    "computer-science",
+    "vit-chennai",
+    "react",
+    "javascript",
+    "nodejs"
+  ],
+  "author": {
+    "name": "Achal Tripathi",
+    "email": "tripathiachal75@gmail.com",
+    "url": "https://github.com/achaltri29"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/achaltri29/achal-tripathi-portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/achaltri29/achal-tripathi-portfolio/issues"
+  },
+  "homepage": "https://achaltri29.github.io/achal-tripathi-portfolio",
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

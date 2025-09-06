@@ -1,6 +1,6 @@
 # Achal Tripathi - Portfolio Website
 
-A modern, responsive portfolio website showcasing my skills, projects, and experience as a Computer Science student and Web Developer.
+A modern, responsive portfolio website showcasing my skills, projects, and experience as a CSE student and Web Developer.
 
 ## 📁 Project Structure
 

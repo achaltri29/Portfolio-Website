@@ -1197,11 +1197,6 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-/* ---------------------------------- */
-/* -- DARK MODE VISIBILITY FIXES -- */
-/* ---------------------------------- */
-
-/* 1. Change section headings to be white */
 [data-theme="dark"] .section-title {
     background: linear-gradient(135deg, #ffffff 0%, #e5e7eb 100%);
     -webkit-background-clip: text;
@@ -1209,20 +1204,18 @@ body {
     background-clip: text;
 }
 
-/* 2. Change navbar text to be dark to contrast with light navbar */
 [data-theme="dark"] .nav-link {
-    color: #0f172a !important; /* Dark text color */
+    color: #0f172a !important;
 }
 
 [data-theme="dark"] .nav-link:hover {
     color: var(--accent-color) !important;
 }
 
-[data-theme="dark"] .bar { /* Hamburger menu icon bars */
+[data-theme="dark"] .bar {
     background: #0f172a;
 }
 
-/* 3. Change text inside white cards/containers to be dark */
 [data-theme="dark"] .project-title {
     color: #1f2937 !important;
 }
@@ -1254,7 +1247,6 @@ body {
     background-color: #ffffff;
 }
 
-/* General Dark Theme Overrides */
 [data-theme="dark"] .hero-title,
 [data-theme="dark"] .hero-subtitle,
 [data-theme="dark"] .hero-description {
@@ -1384,4 +1376,27 @@ body {
     opacity: 0.8;
 }
 
+[data-theme="dark"] .project-link {
+    background: #1e293b;
+    color: #ffffff;
+}
 
+[data-theme="dark"] .project-link:hover {
+    background: #ffffff;
+    color: #1e293b;
+}
+
+[data-theme="dark"] .social-link:hover {
+    color: #0f172a;
+}
+
+[data-theme="dark"] .theme-btn {
+    color: #ffffff;
+    background: #1e293b;
+}
+
+[data-theme="dark"] .theme-btn:hover {
+    background: #ffffff;
+    color: #0f172a;
+    border-color: #ffffff;
+}

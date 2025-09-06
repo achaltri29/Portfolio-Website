@@ -5,7 +5,7 @@ A modern, responsive portfolio website showcasing my skills, projects, and exper
 ## 📁 Project Structure
 
 ```
-achal-portfolio/
+portfolio/
 ├── index.html         
 ├── styles.css          
 ├── script.js          

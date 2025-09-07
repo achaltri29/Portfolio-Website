@@ -14,10 +14,3 @@ portfolio/
 ├── script.js          
 └── README.md          
 ```
-
-## 📧 Contact
-
-- **Email**: tripathiachal75@gmail.com
-- **LinkedIn**: [Achal Tripathi](https://www.linkedin.com/in/achal-tripathi)
-- **LeetCode**: [Achal29](https://leetcode.com/u/Achal29/)
-- **CodeChef**: [achal_2905](https://www.codechef.com/users/achal_2905)

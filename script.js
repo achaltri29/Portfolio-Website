@@ -4,6 +4,7 @@ const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 const skillFills = document.querySelectorAll('.skill-fill');
 const contactForm = document.getElementById('contactForm');
+const contactSubmitBtn = contactForm ? document.getElementById('contactSubmit') : null;
 const themeToggle = document.getElementById('themeToggle');
 const scrollToTopBtn = document.getElementById('scrollToTop');
 
@@ -27,7 +28,7 @@ navLinks.forEach(link => {
         e.preventDefault();
         const targetId = link.getAttribute('href');
         const targetSection = document.querySelector(targetId);
-        
+
         if (targetSection) {
             const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
             window.scrollTo({
@@ -60,7 +61,7 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('animated');
-            
+
             // Animate skill bars
             if (entry.target.classList.contains('skill-fill')) {
                 const width = entry.target.getAttribute('data-width');
@@ -78,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('animate-on-scroll');
         observer.observe(el);
     });
-    
+
     // Observe skill bars
     skillFills.forEach(skill => {
         observer.observe(skill);
@@ -97,7 +98,7 @@ const animateSkillBars = () => {
 const typeWriter = (element, text, speed = 100) => {
     let i = 0;
     element.innerHTML = '';
-    
+
     const timer = setInterval(() => {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
@@ -127,37 +128,58 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Contact form handling
+// Contact form handling (prevent native submit + handle button click)
 if (contactForm) {
+    // Safety: block any default form submit behaviour
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+    });
+}
+
+if (contactSubmitBtn && contactForm) {
+    contactSubmitBtn.addEventListener('click', () => {
+        console.log('[ContactForm] Button clicked');
+
+        // Safety: make sure EmailJS is loaded
+        if (typeof emailjs === 'undefined') {
+            console.error('[ContactForm] EmailJS is not available on window');
+            alert('EmailJS is not loaded. Check the <script> in <head>.');
+            return;
+        }
+
         // Get form data
-        const formData = new FormData(contactForm);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const subject = formData.get('subject');
-        const message = formData.get('message');
-        
-        // Simple validation
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
+
         if (!name || !email || !subject || !message) {
             showNotification('Please fill in all fields', 'error');
             return;
         }
-        
-        // Simulate form submission
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-        
-        setTimeout(() => {
-            showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-            contactForm.reset();
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }, 2000);
+
+        const originalText = contactSubmitBtn.textContent;
+        contactSubmitBtn.textContent = 'Sending...';
+        contactSubmitBtn.disabled = true;
+
+        const serviceID = 'service_1ybo6jr';
+        const templateID = 'template_1cz10he';
+        const templateParams = { name, email, subject, message };
+
+        console.log('[ContactForm] Sending via EmailJS', { serviceID, templateID, templateParams });
+
+        emailjs.send(serviceID, templateID, templateParams)
+            .then((res) => {
+                showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+                contactForm.reset();
+            }, (error) => {
+                console.error('[ContactForm] EmailJS FAILED...', error);
+                showNotification('Failed to send message. Please try again later.', 'error');
+            })
+            .finally(() => {
+                contactSubmitBtn.textContent = originalText;
+                contactSubmitBtn.disabled = false;
+            });
     });
 }
 
@@ -168,7 +190,7 @@ const showNotification = (message, type = 'info') => {
     if (existingNotification) {
         existingNotification.remove();
     }
-    
+
     // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
@@ -178,7 +200,7 @@ const showNotification = (message, type = 'info') => {
             <button class="notification-close">&times;</button>
         </div>
     `;
-    
+
     // Add styles
     notification.style.cssText = `
         position: fixed;
@@ -194,15 +216,15 @@ const showNotification = (message, type = 'info') => {
         transition: transform 0.3s ease;
         max-width: 400px;
     `;
-    
+
     // Add to DOM
     document.body.appendChild(notification);
-    
+
     // Animate in
     setTimeout(() => {
         notification.style.transform = 'translateX(0)';
     }, 100);
-    
+
     // Auto remove after 5 seconds
     setTimeout(() => {
         notification.style.transform = 'translateX(100%)';
@@ -212,7 +234,7 @@ const showNotification = (message, type = 'info') => {
             }
         }, 300);
     }, 5000);
-    
+
     // Close button functionality
     const closeBtn = notification.querySelector('.notification-close');
     closeBtn.addEventListener('click', () => {
@@ -229,9 +251,9 @@ const showNotification = (message, type = 'info') => {
 const createParticles = () => {
     const hero = document.querySelector('.hero');
     if (!hero) return;
-    
+
     const particleCount = 50;
-    
+
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
@@ -247,7 +269,7 @@ const createParticles = () => {
             top: ${Math.random() * 100}%;
             animation-delay: ${Math.random() * 10}s;
         `;
-        
+
         hero.appendChild(particle);
     }
 };
@@ -285,12 +307,12 @@ document.addEventListener('DOMContentLoaded', createParticles);
 const updateActiveNavLink = () => {
     const sections = document.querySelectorAll('section[id]');
     const scrollPos = window.scrollY + 100;
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.offsetHeight;
         const sectionId = section.getAttribute('id');
-        
+
         if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
             navLinks.forEach(link => {
                 link.classList.remove('active');
@@ -320,12 +342,12 @@ document.head.appendChild(activeStyle);
 // Counter animation for stats
 const animateCounters = () => {
     const counters = document.querySelectorAll('.stat-item h3');
-    
+
     counters.forEach(counter => {
         const target = parseInt(counter.textContent);
         const increment = target / 100;
         let current = 0;
-        
+
         const updateCounter = () => {
             if (current < target) {
                 current += increment;
@@ -335,7 +357,7 @@ const animateCounters = () => {
                 counter.textContent = target + (counter.textContent.includes('+') ? '+' : '');
             }
         };
-        
+
         updateCounter();
     });
 };
@@ -412,11 +434,11 @@ const initTheme = () => {
 const toggleTheme = () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
+
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     updateThemeIcon(newTheme);
-    
+
     // showNotification(`Switched to ${newTheme} theme`, 'success');
 };
 
@@ -471,7 +493,7 @@ document.addEventListener('keydown', (e) => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
     }
-    
+
     // Ctrl/Cmd + K toggles theme
     if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
@@ -522,7 +544,7 @@ if (navMenu) {
 // Add loading animation with theme support
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
-    
+
     // Add theme-specific loading animation
     const currentTheme = document.documentElement.getAttribute('data-theme');
     if (currentTheme === 'dark') {

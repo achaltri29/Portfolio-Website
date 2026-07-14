@@ -878,6 +878,21 @@ body {
     color: var(--primary-color);
 }
 
+.experience-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.experience-link:hover {
+    color: var(--primary-color);
+}
+
 /* Resume Download Button */
 .resume-download {
     margin-top: 2rem;

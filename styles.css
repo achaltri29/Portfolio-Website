@@ -265,6 +265,16 @@ ol {
     background: rgba(250, 250, 250, 0.85);
 }
 
+/* When mobile menu is open, remove backdrop-filter and background from navbar so it doesn't create a containing block for the fixed overlay */
+.navbar.menu-open,
+.navbar:has(.nav-menu.active) {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom-color: transparent !important;
+    transition: none !important;
+}
+
 .nav-container {
     max-width: var(--container-wide);
     margin: 0 auto;
@@ -287,7 +297,15 @@ ol {
 /* Mobile: full-screen overlay */
 .nav-menu {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    width: 100vw;
+    height: 100%;
+    height: 100vh;
+    height: 100dvh;
     background: rgba(9, 9, 11, 0.97);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
@@ -295,7 +313,10 @@ ol {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: var(--space-8);
+    gap: clamp(1.25rem, 3.5vh, 2rem);
+    padding: calc(var(--nav-height) + var(--space-4)) var(--space-4) var(--space-6);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     z-index: 999;
     opacity: 0;
     visibility: hidden;
@@ -409,6 +430,8 @@ ol {
 @media (min-width: 768px) {
     .nav-menu {
         position: static;
+        width: auto;
+        height: auto;
         background: none !important;
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
@@ -417,6 +440,8 @@ ol {
         visibility: visible;
         gap: 0.65rem;
         inset: unset;
+        padding: 0;
+        overflow: visible;
     }
 
     .nav-link {
@@ -587,7 +612,7 @@ ol {
     display: flex;
     justify-content: center;
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
 }
 
 .hero-glow {
@@ -595,8 +620,8 @@ ol {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 320px;
-    height: 320px;
+    width: 360px;
+    height: 360px;
     background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
     filter: blur(50px);
     pointer-events: none;
@@ -627,8 +652,8 @@ ol {
 }
 
 .profile-photo {
-    width: 96px;
-    height: 96px;
+    width: 112px;
+    height: 112px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--border);
@@ -693,7 +718,7 @@ ol {
     .hero-content {
         flex-direction: row;
         text-align: left;
-        gap: var(--space-16);
+        gap: var(--space-12);
     }
 
     .hero-text {
@@ -702,8 +727,13 @@ ol {
 
     .hero-visual {
         flex: 0 0 auto;
-        width: 300px;
+        width: 320px;
         max-width: none;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
     }
 
     .hero-description {
@@ -721,8 +751,17 @@ ol {
 }
 
 @media (min-width: 1024px) {
+    .hero-content {
+        gap: var(--space-16);
+    }
+
     .hero-visual {
-        width: 320px;
+        width: 360px;
+    }
+
+    .hero-glow {
+        width: 400px;
+        height: 400px;
     }
 
     .profile-card {
@@ -730,8 +769,9 @@ ol {
     }
 
     .profile-photo {
-        width: 110px;
-        height: 110px;
+        width: 136px;
+        height: 136px;
+        margin-bottom: var(--space-5);
     }
 }
 
@@ -1379,6 +1419,11 @@ ol {
     transform: translateY(-2px);
 }
 
+body.menu-open .scroll-to-top {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
 /* ===================================================================
    NOTIFICATIONS
    =================================================================== */
@@ -1555,7 +1600,12 @@ a:focus:not(:focus-visible) {
     }
 
     .hero-visual {
-        max-width: 260px;
+        max-width: 285px;
+    }
+
+    .profile-photo {
+        width: 104px;
+        height: 104px;
     }
 
     .profile-card {

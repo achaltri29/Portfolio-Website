@@ -20,10 +20,27 @@ const debounce = (func, wait) => {
 // ===================================================================
 // 1. MOBILE HAMBURGER MENU
 // ===================================================================
+const closeMobileMenu = () => {
+    if (hamburger && navMenu) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        if (navbar) {
+            navbar.classList.remove('menu-open');
+        }
+        document.body.classList.remove('menu-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+};
+
 if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
         const isActive = hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
+        navMenu.classList.toggle('active', isActive);
+        if (navbar) {
+            navbar.classList.toggle('menu-open', isActive);
+        }
+        document.body.classList.toggle('menu-open', isActive);
         hamburger.setAttribute('aria-expanded', isActive);
         // Prevent body scroll when menu is open
         document.body.style.overflow = isActive ? 'hidden' : '';
@@ -33,13 +50,31 @@ if (hamburger && navMenu) {
 // Close mobile menu when clicking a nav link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        if (hamburger && navMenu) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
+        closeMobileMenu();
+    });
+});
+
+// Close mobile menu on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu && navMenu.classList.contains('active')) {
+        closeMobileMenu();
+    }
+});
+
+// Close mobile menu when clicking outside links on the overlay backdrop
+if (navMenu) {
+    navMenu.addEventListener('click', (e) => {
+        if (e.target === navMenu) {
+            closeMobileMenu();
         }
     });
+}
+
+// Ensure mobile menu closes cleanly if screen resized to desktop
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768 && navMenu && navMenu.classList.contains('active')) {
+        closeMobileMenu();
+    }
 });
 
 // ===================================================================

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Achal Tripathi - Portfolio | CSE Student & Full-Stack Developer</title>
+    <title>Achal Tripathi - Portfolio | CSE Student &amp; Full-Stack Developer</title>
     <meta name="description"
         content="Achal Tripathi's portfolio - Computer Science Engineering student at VIT Chennai with expertise in React, Node.js, Python, and competitive programming. View my projects and get in touch!">
     <meta name="keywords"
@@ -12,7 +12,7 @@
     <meta name="author" content="Achal Tripathi">
     <meta property="og:title" content="Achal Tripathi - Portfolio">
     <meta property="og:description"
-        content="Computer Science Engineering Student & Full-Stack Developer at VIT Chennai">
+        content="Computer Science Engineering Student &amp; Full-Stack Developer at VIT Chennai">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="styles.css">
@@ -31,62 +31,46 @@
     </script>
 </head>
 
-<body>
+<body class="loading">
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-text">Achal Tripathi</span>
-            </div>
-            <div class="theme-toggle">
-                <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#education" class="nav-link">Education</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#experience" class="nav-link">Experience</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#positions" class="nav-link">Positions</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
+            <a href="#home" class="nav-logo">Achal Tripathi</a>
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="#home" class="nav-link" role="menuitem">Home</a></li>
+                <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+                <li role="none"><a href="#education" class="nav-link" role="menuitem">Education</a></li>
+                <li role="none"><a href="#experience" class="nav-link" role="menuitem">Experience</a></li>
+                <li role="none"><a href="#positions" class="nav-link" role="menuitem">Positions</a></li>
+                <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+                <li role="none"><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
+                <li role="none"><a href="#certifications" class="nav-link" role="menuitem">Certifications</a></li>
+                <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-container">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="container hero-container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">
-                        Hi, I'm Achal Tripathi
-                    </h1>
+                    <p class="hero-label">Hi, I'm</p>
+                    <h1 class="hero-title">Achal Tripathi</h1>
                     <h2 class="hero-subtitle">
-                        Computer Science Engineering Student & Full-Stack Developer
+                        Computer Science Engineering Student &amp; Full-Stack Developer
                     </h2>
                     <p class="hero-description">
                         Passionate about building innovative solutions and exploring the intersection of technology and
@@ -98,22 +82,26 @@
                         <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                     </div>
                     <div class="hero-social">
-                        <a href="https://github.com/achaltri29" target="_blank" class="social-link">
+                        <a href="https://github.com/achaltri29" target="_blank" class="social-link"
+                            aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/achal-tripathi-70b2a9271" target="_blank"
-                            class="social-link">
+                            class="social-link" aria-label="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="https://leetcode.com/u/Achal29/" target="_blank" class="social-link">
+                        <a href="https://leetcode.com/u/Achal29/" target="_blank" class="social-link"
+                            aria-label="LeetCode">
                             <i class="fas fa-code"></i>
                         </a>
-                        <a href="https://www.codechef.com/users/achal_2905" target="_blank" class="social-link">
+                        <a href="https://www.codechef.com/users/achal_2905" target="_blank" class="social-link"
+                            aria-label="CodeChef">
                             <i class="fas fa-trophy"></i>
                         </a>
                     </div>
                 </div>
-                <div class="hero-image">
+                <div class="hero-visual">
+                    <div class="hero-glow" aria-hidden="true"></div>
                     <div class="profile-card">
                         <div class="profile-image">
                             <img src="Portfolio Photo.jpeg" alt="Achal Tripathi" class="profile-photo">
@@ -130,17 +118,16 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
-        </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <div class="section-header reveal">
+                <h2 class="section-title">About Me</h2>
+            </div>
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text reveal">
                     <p class="about-description">
                         I'm a passionate Computer Science Engineering student at Vellore Institute of Technology,
                         Chennai,
@@ -161,30 +148,30 @@
                         </a>
                     </div>
                 </div>
-                <div class="about-skills">
+                <div class="about-competencies reveal">
                     <h3>Core Competencies</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
+                    <div class="competency-grid">
+                        <div class="competency-item">
                             <i class="fab fa-js-square"></i>
                             <span>JavaScript</span>
                         </div>
-                        <div class="skill-item">
+                        <div class="competency-item">
                             <i class="fab fa-react"></i>
                             <span>React</span>
                         </div>
-                        <div class="skill-item">
+                        <div class="competency-item">
                             <i class="fab fa-node-js"></i>
                             <span>Node.js</span>
                         </div>
-                        <div class="skill-item">
+                        <div class="competency-item">
                             <i class="fas fa-database"></i>
                             <span>MongoDB</span>
                         </div>
-                        <div class="skill-item">
+                        <div class="competency-item">
                             <i class="fab fa-python"></i>
                             <span>Python</span>
                         </div>
-                        <div class="skill-item">
+                        <div class="competency-item">
                             <i class="fas fa-code"></i>
                             <span>DSA</span>
                         </div>
@@ -195,43 +182,36 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="education">
+    <section id="education" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-content">
-                <div class="education-item">
-                    <div class="education-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="education-details">
+            <div class="section-header reveal">
+                <h2 class="section-title">Education</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-card">
                         <h3>Bachelor of Technology in Computer Science Engineering</h3>
                         <h4>Vellore Institute of Technology, Chennai</h4>
-                        <p class="education-period">2023 - 2027</p>
-                        <p class="education-description">Pursuing Computer Science Engineering with focus on software
+                        <span class="timeline-period">2023 - 2027</span>
+                        <p class="timeline-description">Pursuing Computer Science Engineering with focus on software
                             development, data structures, algorithms, and modern web technologies.</p>
                     </div>
                 </div>
-                <div class="education-item">
-                    <div class="education-icon">
-                        <i class="fas fa-school"></i>
-                    </div>
-                    <div class="education-details">
+                <div class="timeline-item reveal">
+                    <div class="timeline-card">
                         <h3>Higher Secondary School</h3>
                         <h4>Blossom Public School, Tathawade (CBSE Board)</h4>
-                        <p class="education-period">2021 - 2023</p>
-                        <p class="education-description">Completed 12th grade with focus on Mathematics, Physics, and
+                        <span class="timeline-period">2021 - 2023</span>
+                        <p class="timeline-description">Completed 12th grade with focus on Mathematics, Physics, and
                             Chemistry.</p>
                     </div>
                 </div>
-                <div class="education-item">
-                    <div class="education-icon">
-                        <i class="fas fa-school"></i>
-                    </div>
-                    <div class="education-details">
+                <div class="timeline-item reveal">
+                    <div class="timeline-card">
                         <h3>Secondary School</h3>
                         <h4>Elpro International School, Chinchwad (CBSE Board)</h4>
-                        <p class="education-period">2015 - 2021</p>
-                        <p class="education-description">Completed 10th grade with 94.8%.</p>
+                        <span class="timeline-period">2015 - 2021</span>
+                        <p class="timeline-description">Completed 10th grade with 94.8%.</p>
                     </div>
                 </div>
             </div>
@@ -239,249 +219,232 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="experience">
+    <section id="experience" class="section">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="experience-content">
-
-                <div class="experience-item">
-                    <div class="experience-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="experience-details">
+            <div class="section-header reveal">
+                <h2 class="section-title">Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-card">
                         <h3>Software Engineering Intern</h3>
                         <h4>Quantafic Business Solutions</h4>
-                        <p class="experience-period">May 2026 – July 2026</p>
-                        <p class="experience-description">
+                        <span class="timeline-period">May 2026 – July 2026</span>
+                        <p class="timeline-description">
                             Built core components of QDocument, an AI-powered Document Intelligence platform. Developed
                             hybrid document querying and structured extraction pipelines, and implemented EFCE for
                             multi-page document processing using FastAPI, React, AWS EC2, Google Gemini, and Qwen3-VL.
                         </p>
                         <a href="https://drive.google.com/file/d/1KfjBTwxQeHTbiB0X8UxIsU4Wa5-SPTDT/view?usp=sharing"
-                            target="_blank" class="experience-link">
+                            target="_blank" class="timeline-link">
                             <i class="fas fa-external-link-alt"></i> View Completion Certificate
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- Positions of Responsibility Section -->
-    <section id="positions" class="experience">
+    <section id="positions" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Positions of Responsibility</h2>
-            <div class="experience-content">
-
-                <div class="experience-item" style="margin-bottom: 18px;">
-                    <div class="experience-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="experience-details">
+            <div class="section-header reveal">
+                <h2 class="section-title">Positions of Responsibility</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-card">
                         <h3>Web Developer</h3>
                         <h4>CodeChef Chapter, VIT Chennai</h4>
-                        <p class="experience-period">Oct,2025 - July,2026</p>
-                        <p class="experience-description">
+                        <span class="timeline-period">Oct,2025 - July,2026</span>
+                        <p class="timeline-description">
                             Contributed to the chapter's website by building and maintaining features,
                             highlighting events, and improving member engagement through web solutions.
                         </p>
                     </div>
                 </div>
-
-                <div class="experience-item" style="margin-bottom: 18px;">
-                    <div class="experience-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="experience-details">
+                <div class="timeline-item reveal">
+                    <div class="timeline-card">
                         <h3>Web Developer</h3>
                         <h4>Data Science Club, VIT Chennai</h4>
-                        <p class="experience-period">Sep,2025 - Present</p>
-                        <p class="experience-description">
+                        <span class="timeline-period">Sep,2025 - Present</span>
+                        <p class="timeline-description">
                             Supporting the design and development of the club's official website,
                             and collaborating on web projects to enhance usability and functionality.
                         </p>
                     </div>
                 </div>
-
-                <div class="experience-item">
-                    <div class="experience-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="experience-details">
+                <div class="timeline-item reveal">
+                    <div class="timeline-card">
                         <h3>Member</h3>
                         <h4>Zero Bugs Club, VIT Chennai</h4>
-                        <p class="experience-period">Feb,2024 - Present</p>
-                        <p class="experience-description">
+                        <span class="timeline-period">Feb,2024 - Present</span>
+                        <p class="timeline-description">
                             Active member of the coding club, taking part in hackathons, technical workshops,
                             and programming events. Helped in organizing <strong>Techvilla</strong>, a multi-day
                             event that drew 480+ participants.
                         </p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <div class="section-header reveal">
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
             <div class="projects-grid">
-                <!-- EduMeet Project -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
+                <!-- EduMeet -->
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-icon">
                             <i class="fas fa-video"></i>
                         </div>
-                        <div class="project-overlay">
-                            <a href="https://github.com/achaltri29/EduMeet" target="_blank" class="project-link">
+                        <div class="project-links">
+                            <a href="https://github.com/achaltri29/EduMeet" target="_blank" class="project-link-btn"
+                                aria-label="EduMeet GitHub">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="https://edumeetfrontend.onrender.com" target="_blank" class="project-link">
+                            <a href="https://edumeetfrontend.onrender.com" target="_blank" class="project-link-btn"
+                                aria-label="EduMeet Live Demo">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">EduMeet</h3>
-                        <p class="project-description">
-                            A modern WebRTC-based video conferencing platform designed for virtual classrooms.
-                            Features real-time video/audio calling, screen sharing, live chat, and secure
-                            authentication.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">WebRTC</span>
-                            <span class="tech-tag">Socket.io</span>
-                        </div>
+                    <h3 class="project-title">EduMeet</h3>
+                    <p class="project-description">
+                        A modern WebRTC-based video conferencing platform designed for virtual classrooms.
+                        Features real-time video/audio calling, screen sharing, live chat, and secure
+                        authentication.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">WebRTC</span>
+                        <span class="tech-tag">Socket.io</span>
                     </div>
                 </div>
 
-                <!-- Kolam Generator Project -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
+                <!-- Kolam Generator -->
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-icon">
                             <i class="fas fa-palette"></i>
                         </div>
-                        <div class="project-overlay">
+                        <div class="project-links">
                             <a href="https://github.com/achaltri29/Kolam-Generator-using-LoRA" target="_blank"
-                                class="project-link">
+                                class="project-link-btn" aria-label="Kolam Generator GitHub">
                                 <i class="fab fa-github"></i>
                             </a>
                         </div>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Kolam Generator Using LoRA</h3>
-                        <p class="project-description">
-                            Generative AI application for creating intricate South Indian Kolam patterns.
-                            Built with React and FastAPI, featuring a custom-trained LoRA model and standardized 512x512
-                            dataset.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">Stable Diffusion</span>
-                            <span class="tech-tag">Python</span>
-                        </div>
+                    <h3 class="project-title">Kolam Generator Using LoRA</h3>
+                    <p class="project-description">
+                        Generative AI application for creating intricate South Indian Kolam patterns.
+                        Built with React and FastAPI, featuring a custom-trained LoRA model and standardized 512x512
+                        dataset.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Stable Diffusion</span>
+                        <span class="tech-tag">Python</span>
                     </div>
                 </div>
 
-                <!-- Lumina Project -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
+                <!-- Lumina -->
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-icon">
                             <i class="fas fa-robot"></i>
                         </div>
-                        <div class="project-overlay">
-                            <a href="https://github.com/achaltri29/Lumina" target="_blank" class="project-link">
+                        <div class="project-links">
+                            <a href="https://github.com/achaltri29/Lumina" target="_blank" class="project-link-btn"
+                                aria-label="Lumina GitHub">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="https://lumina-frontend-2hc4.onrender.com" target="_blank" class="project-link">
+                            <a href="https://lumina-frontend-2hc4.onrender.com" target="_blank"
+                                class="project-link-btn" aria-label="Lumina Live Demo">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Lumina</h3>
-                        <p class="project-description">
-                            A MERN stack application for interfacing with local AI models via Ollama.
-                            Features JWT authentication, persistent chat history, and a modern React UI.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Ollama</span>
-                        </div>
+                    <h3 class="project-title">Lumina</h3>
+                    <p class="project-description">
+                        A MERN stack application for interfacing with local AI models via Ollama.
+                        Features JWT authentication, persistent chat history, and a modern React UI.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Ollama</span>
                     </div>
                 </div>
 
-                <!-- Land Registration System Project -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
+                <!-- Land Registration System -->
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-icon">
                             <i class="fas fa-landmark"></i>
                         </div>
-                        <div class="project-overlay">
+                        <div class="project-links">
                             <a href="https://github.com/achaltri29/Land-Registration-System" target="_blank"
-                                class="project-link">
+                                class="project-link-btn" aria-label="Land Registration GitHub">
                                 <i class="fab fa-github"></i>
                             </a>
                             <a href="https://land-registration-system-frontend.onrender.com/" target="_blank"
-                                class="project-link">
+                                class="project-link-btn" aria-label="Land Registration Live Demo">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Land Registration System</h3>
-                        <p class="project-description">
-                            Secure Blockchain Land Registry built on Ethereum & IPFS.
-                            Enables decentralized property registration, government verification, and ownership
-                            transfers.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Solidity</span>
-                            <span class="tech-tag">Ethereum</span>
-                            <span class="tech-tag">IPFS</span>
-                            <span class="tech-tag">React</span>
-                        </div>
+                    <h3 class="project-title">Land Registration System</h3>
+                    <p class="project-description">
+                        Secure Blockchain Land Registry built on Ethereum &amp; IPFS.
+                        Enables decentralized property registration, government verification, and ownership
+                        transfers.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Solidity</span>
+                        <span class="tech-tag">Ethereum</span>
+                        <span class="tech-tag">IPFS</span>
+                        <span class="tech-tag">React</span>
                     </div>
                 </div>
 
-                <!-- GlucoGuard Project -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
+                <!-- GlucoGuard -->
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-icon">
                             <i class="fas fa-heartbeat"></i>
                         </div>
-                        <div class="project-overlay">
-                            <a href="https://github.com/achaltri29/GlucoGuard" target="_blank" class="project-link">
+                        <div class="project-links">
+                            <a href="https://github.com/achaltri29/GlucoGuard" target="_blank"
+                                class="project-link-btn" aria-label="GlucoGuard GitHub">
                                 <i class="fab fa-github"></i>
                             </a>
                             <a href="https://health-risk-prediction-ai.streamlit.app" target="_blank"
-                                class="project-link">
+                                class="project-link-btn" aria-label="GlucoGuard Live Demo">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">GlucoGuard</h3>
-                        <p class="project-description">
-                            ML-based health risk assessment platform predicting chronic disease risks.
-                            Features XGBoost models, personalized Gemini AI recommendations, and interactive Streamlit
-                            UI.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">XGBoost</span>
-                            <span class="tech-tag">Streamlit</span>
-                            <span class="tech-tag">Gemini AI</span>
-                        </div>
+                    <h3 class="project-title">GlucoGuard</h3>
+                    <p class="project-description">
+                        ML-based health risk assessment platform predicting chronic disease risks.
+                        Features XGBoost models, personalized Gemini AI recommendations, and interactive Streamlit
+                        UI.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">XGBoost</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">Gemini AI</span>
                     </div>
                 </div>
             </div>
@@ -489,120 +452,74 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <div class="skills-content">
-                <div class="skills-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fab fa-js-square"></i>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-java"></i>
-                            <span>Java</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-code"></i>
-                            <span>C++</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>SQL</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skills-category">
-                    <h3>Web Technologies</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fab fa-react"></i>
-                            <span>React</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-node-js"></i>
-                            <span>Node.js</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-html5"></i>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-css3-alt"></i>
-                            <span>CSS3</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>MongoDB</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-server"></i>
-                            <span>Express.js</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skills-category">
-                    <h3>AI & Machine Learning</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fas fa-brain"></i>
-                            <span>Machine Learning</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-robot"></i>
-                            <span>Deep Learning</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-magic"></i>
-                            <span>Generative AI</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-network-wired"></i>
-                            <span>Large Language Models (LLM)</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-search"></i>
-                            <span>Retrieval-Augmented Generation (RAG)</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>Oracle Cloud Infrastructure</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skills-category">
-                    <h3>Tools & Platforms</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fab fa-git-alt"></i>
-                            <span>Git</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-code"></i>
-                            <span>VS Code</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-docker"></i>
-                            <span>Docker</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-cloud"></i>
-                            <span>AWS</span>
-                        </div>
-                        <div class="skill-item">
+            <div class="section-header reveal">
+                <h2 class="section-title">Skills &amp; Technologies</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">
                             <i class="fas fa-terminal"></i>
-                            <span>Linux</span>
                         </div>
+                        <h3 class="skill-category-title">Programming Languages</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="skill-category-title">Web Technologies</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Express.js</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="skill-category-title">AI &amp; Machine Learning</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Deep Learning</span>
+                        <span class="skill-tag">Generative AI</span>
+                        <span class="skill-tag">Large Language Models (LLM)</span>
+                        <span class="skill-tag">Retrieval-Augmented Generation (RAG)</span>
+                        <span class="skill-tag">Oracle Cloud Infrastructure</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <h3 class="skill-category-title">Tools &amp; Platforms</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Linux</span>
                     </div>
                 </div>
             </div>
@@ -610,74 +527,79 @@
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="certifications">
+    <section id="certifications" class="section">
         <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="certifications-content">
-                <div class="certification-item">
-                    <div class="certification-icon">
+            <div class="section-header reveal">
+                <h2 class="section-title">Certifications</h2>
+            </div>
+            <div class="certifications-grid">
+                <div class="certification-card reveal">
+                    <div class="certification-badge">
                         <i class="fas fa-certificate"></i>
                     </div>
-                    <div class="certification-details">
-                        <h3>OCI Generative AI Professional</h3>
-                        <p class="certification-issuer">Oracle Corporation</p>
-                        <p class="certification-period">July 2025 - July 2027</p>
-                        <p class="certification-description">Professional certification in Oracle Cloud Infrastructure
-                            Generative AI, covering machine learning, deep learning, and advanced AI technologies.</p>
-                        <a href="https://drive.google.com/file/d/1kJ2-sS4CyVDYMZFVCtrKTDEPE5CLK2hY/view?usp=sharing"
-                            target="_blank" class="certification-link">
-                            <i class="fas fa-external-link-alt"></i> View Certificate
-                        </a>
-                    </div>
+                    <h3>OCI Generative AI Professional</h3>
+                    <p class="certification-issuer">Oracle Corporation</p>
+                    <p class="certification-period">July 2025 - July 2027</p>
+                    <p class="certification-description">Professional certification in Oracle Cloud Infrastructure
+                        Generative AI, covering machine learning, deep learning, and advanced AI technologies.</p>
+                    <a href="https://drive.google.com/file/d/1kJ2-sS4CyVDYMZFVCtrKTDEPE5CLK2hY/view?usp=sharing"
+                        target="_blank" class="certification-link">
+                        <i class="fas fa-external-link-alt"></i> View Certificate
+                    </a>
                 </div>
-
-                <div class="certification-item">
-                    <div class="certification-icon">
+                <div class="certification-card reveal">
+                    <div class="certification-badge">
                         <i class="fas fa-cubes"></i>
                     </div>
-                    <div class="certification-details">
-                        <h3>Oracle AI Vector Search Professional</h3>
-                        <p class="certification-issuer">Oracle Corporation</p>
-                        <p class="certification-period">October 2025 - October 2027</p>
-                        <p class="certification-description">Specialized certification in AI Vector Search,
-                            demonstrating expertise in implementing vector databases, semantic search, and RAG
-                            architectures.</p>
-                        <a href="https://drive.google.com/file/d/1tWjENSWQcmSk25XAOqY8zo9knwXiv5Kj/view?usp=sharing"
-                            target="_blank" class="certification-link">
-                            <i class="fas fa-external-link-alt"></i> View Certificate
-                        </a>
-                    </div>
+                    <h3>Oracle AI Vector Search Professional</h3>
+                    <p class="certification-issuer">Oracle Corporation</p>
+                    <p class="certification-period">October 2025 - October 2027</p>
+                    <p class="certification-description">Specialized certification in AI Vector Search,
+                        demonstrating expertise in implementing vector databases, semantic search, and RAG
+                        architectures.</p>
+                    <a href="https://drive.google.com/file/d/1tWjENSWQcmSk25XAOqY8zo9knwXiv5Kj/view?usp=sharing"
+                        target="_blank" class="certification-link">
+                        <i class="fas fa-external-link-alt"></i> View Certificate
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <div class="section-header reveal">
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
             <div class="contact-content">
-                <div class="contact-info">
+                <div class="contact-info reveal">
                     <h3>Let's Connect!</h3>
                     <p>I'm always interested in new opportunities and exciting projects.
                         Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
+                            <div class="contact-item-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
                             <div>
                                 <h4>Email</h4>
                                 <p>tripathiachal75@gmail.com</p>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-item-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
                             <div>
                                 <h4>Location</h4>
                                 <p>Chennai, Tamil Nadu, India</p>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-graduation-cap"></i>
+                            <div class="contact-item-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
                             <div>
                                 <h4>Education</h4>
                                 <p>VIT Chennai - Computer Science</p>
@@ -685,22 +607,25 @@
                         </div>
                     </div>
                     <div class="contact-social">
-                        <a href="https://github.com/achaltri29" target="_blank" class="social-link">
+                        <a href="https://github.com/achaltri29" target="_blank" class="social-link"
+                            aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/achal-tripathi-70b2a9271" target="_blank"
-                            class="social-link">
+                            class="social-link" aria-label="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="https://leetcode.com/u/Achal29/" target="_blank" class="social-link">
+                        <a href="https://leetcode.com/u/Achal29/" target="_blank" class="social-link"
+                            aria-label="LeetCode">
                             <i class="fas fa-code"></i>
                         </a>
-                        <a href="https://www.codechef.com/users/achal_2905" target="_blank" class="social-link">
+                        <a href="https://www.codechef.com/users/achal_2905" target="_blank" class="social-link"
+                            aria-label="CodeChef">
                             <i class="fas fa-trophy"></i>
                         </a>
                     </div>
                 </div>
-                <div class="contact-form">
+                <div class="contact-form-card reveal">
                     <form id="contactForm">
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Your Name" required>
